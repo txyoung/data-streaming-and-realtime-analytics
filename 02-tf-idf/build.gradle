@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'th.ac.nida'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    compileOnly group: 'org.apache.spark', name: 'spark-core_2.12', version: '3.1.2'
+    compileOnly group: 'org.apache.spark', name: 'spark-mllib_2.12', version: '3.1.2'
+    compileOnly group: 'org.apache.spark', name: 'spark-streaming_2.12', version: '3.1.2'
+
+    testImplementation group: 'org.apache.spark', name: 'spark-sql-kafka-0-10_2.12', version: '3.1.2'
+}
+
+test {
+    useJUnitPlatform()
+}
